@@ -57,9 +57,7 @@ class KotlinPlayground : Game() {
         world.setContactListener(PlaygroundContactlistener(this))
         cam = OrthographicCamera(Gdx.graphics.width * UNIT_SCALE, Gdx.graphics.height * UNIT_SCALE)
         cam.translate(0f, Gdx.graphics.height * UNIT_SCALE / 2 - 1)
-        // cam.zoom = 0.5f;
         cam.update()
-        // vertices = new float[] { 0f, 0f, 1f, 0f, 1f, 1f, 0f, 1f };
         colors = Array(arrayOf(Color.FIREBRICK, Color.GOLD, Color.PINK, Color.LIME))
 
         /** BOX2D LIGHT STUFF BEGIN  */
@@ -67,9 +65,9 @@ class KotlinPlayground : Game() {
         rayHandler!!.setAmbientLight(0.28f, 0.28f, 0.28f, 0.1f)
         rayHandler!!.setBlurNum(3)
         rayHandler!!.diffuseBlendFunc.set(GL20.GL_DST_COLOR, GL20.GL_SRC_COLOR)
-        // RayHandler.setGammaCorrection(true);
+        // RayHandler.setGammaCorrection(true)
         RayHandler.useDiffuseLight(true)
-        // rayHandler.setBlur(false);
+        // rayHandler.setBlur(false)
         /** BOX2D LIGHT STUFF END  */
 
         Gdx.input.inputProcessor = PlaygroundInputProcessor(this)
@@ -158,7 +156,7 @@ class KotlinPlayground : Game() {
         }
         shapeRenderer.end()
 
-        // box2dRenderer.render(world, cam.combined);
+        // box2dRenderer.render(world, cam.combined)
         rayHandler!!.updateAndRender()
 
         batch.begin()
